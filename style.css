@@ -1,1 +1,405 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+
+    --bg-color-: #fff0d1;
+    /* example: background-color: var(--bg-color-); */
+    --ghose-: #f8afc7;
+    --pink-: #f03271;
+    --lime-: #99eebf;
+    --red-: #d34a32;
+    /* example: color: var(--red-); */
+    --purpel-: #9967d3;
+    --yellow-: #feee62;
+    --blue-: #2cb6e4;
+    --green-: #0e7a2c;
+    --dark-purpel-: #170d41;
+    --box-radius-: 20px 0 20px 0;
+    /* example: border-radius: var(--box-radius-); */
+    --fit-radius-: 20px;
+    --full-radius-: 50%;
+    --letter-radius: 10px;
+    /* المرجو استخدامها في جميع الأزرار في خاصية hover */
+    --scale-: scale(1.2);
+    /* example: transform: var(--scale-); */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+
+body {
+    width: 100%;
+    background-color: var(--bg-color-);
+}
+
+.letters-section {
+    padding: 10px 60px;
+    width: 100%;
+    height: fit-content;
+    background-color: #fff4da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.letters-section .title {
+    background-color: var(--dark-purpel-);
+    display: inline-block;
+    padding: 10px;
+    border-radius: var(--fit-radius-);
+    color: var(--yellow-);
+    margin: 20px 0 60px 0;
+    h1 {
+        padding: 2px 15px;
+    }
+}
+
+.letters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.letters .letter-button {
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: var(--fit-radius-);
+    border: 2px solid var(--green-);
+    margin: 10px 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.letters .letter-button:hover {
+    transform: var(--scale-);
+    box-shadow: 1px 1px 5px black;
+}
+
+.letters .letter-button.lathawy {
+    background-color: var(--yellow-);
+    border: 2px solid orange;
+}
+
+.letters .letter-button.tafkhim {
+    background-color: var(--blue-);
+}
+
+.letters .letter-button.mix {
+    position: relative;
+    overflow: hidden;
+}
+
+.letters .letter-button.mix::before {
+    content: '';
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--yellow-);
+    z-index: -1;
+}
+
+.letters .letter-button.mix::after {
+    content: '';
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--blue-);
+    z-index: -1;
+}
+
+.letters .letter-button.mix {
+    z-index: 1;
+}
+
+hr {
+    width: 75%;
+    border: 1px solid var(--red-);
+}
+
+hr.first {
+    margin-top: 20px;
+}
+
+.guide {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 10px 0;
+}
+
+.colorGuide {
+    display: flex;
+    align-items: center;
+}
+
+.colorGuide span {
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+}
+
+.colorGuide.yellow span {
+    background-color: var(--yellow-);
+}
+
+.colorGuide.blue span {
+    background-color: var(--blue-);
+}
+
+.colorGuide.yellowBlue span {
+    position: relative;
+}
+
+.colorGuide.yellowBlue span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 100%;
+    height: 50%;
+    background-color: var(--blue-);
+}
+
+.colorGuide.yellowBlue span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--yellow-);
+}
+
+.notes {
+    /* background-color: var(--bg-color-); */
+    padding: 10px;
+    /* border: 1px solid #5d657a; */
+    border-radius: 10px;
+    font-size: 25px;
+    width: 75%;
+    margin: 10px 0;
+    color: #0e2e2b;
+}
+
+ul {
+    list-style: none;
+}
+
+.notes ul li {
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .letters-section {
+        padding: 10px 30px;
+    }
+
+    .letters-section .title {
+        font-size: 15px;
+        padding: 5px;
+        margin: 20px 0 40px 0;
+    }
+
+    .letters .letter-button {
+        width: 90px;
+        height: 90px;
+        padding: 8px;
+        font-size: 30px;
+        margin: 8px 15px;
+
+    }
+
+    .guide {
+        width: 90%;
+        font-size: 10px;
+    }
+
+    .colorGuide span {
+        width: 15px;
+        height: 15px;
+        margin-left: 3px;
+    }
+
+    hr {
+        width: 90%;
+        border: 1px solid var(--red-);
+    }
+
+    .notes {
+        padding: 8px;
+        font-size: 15px;
+        width: 90%;
+        margin: 10px 0;
+        color: #0e2e2b;
+    }
+}
+
+@media (max-width: 640px) {
+    .letters-section {
+        padding: 10px;
+    }
+
+    .letters .letter-button:hover {
+        transform: var(--scale-);
+        box-shadow: 1px 1px 4px var(--dark-purpel-);
+    }
+
+    .letters-section .title {
+        font-size: 12px;
+        padding: 5px;
+        margin: 20px 0 40px 0;
+    }
+
+    .letters {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+    }
+
+    .letters .letter-button {
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    .guide {
+        font-size: 8px;
+    }
+
+    .colorGuide span {
+        width: 10px;
+        height: 10px;
+        margin-left: 3px;
+    }
+
+    .notes {
+        padding: 8px;
+        font-size: 12px;
+        width: 90%;
+        margin: 10px 0;
+        color: #0e2e2b;
+    }
+}
+
+
+
+/*------------<h1>مجموعات الحروف بالكسر</h1>-----------------*/
+
+
+.group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    .letter-button {
+        margin: 15px;
+    }
+
+    .l_1 {
+        background-color: var(--ghose-);
+    }
+
+    .l_1,
+    .l_2 {
+        width: 80px;
+        height: 80px;
+        border-radius: var(--box-radius-);
+    }
+
+    .l_3 {
+        width: 160px;
+        height: 80px;
+        border-radius: var(--box-radius-);
+    }
+
+    .d {
+        background-color: var(--yellow-);
+        border-radius: 100%;
+        border: 2px dotted var(--green-);
+        height: 80px;
+        width: 80px;
+        position: relative;
+    }
+   
+    .jomla {
+        width: 200px;
+        height: 80px;
+        border-radius: var(--box-radius-);
+    }
+
+    .word {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .word:nth-child(odd) {
+        i {
+            color:var(--dark-purpel-);
+        }
+    }
+
+    .l4 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .l_4 {
+            border: 2px dotted var(--red-);
+        }
+    } 
+    i {
+        font-size: 40px;
+        color: var(--red-);
+        font-weight: bold;
+        margin-right: -25px;
+    }
+}
+
+
+
+.group_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--red-);
+}
+
+.group_title .square {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--green-);
+    text-align: center;
+    margin-right: 5px;
+    position: relative;
+    align-items: center;
+    align-content: center;
+}
+
+
