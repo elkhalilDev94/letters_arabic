@@ -229,6 +229,10 @@ ul {
         font-weight: bold;
         /* box-shadow: 2px 1px var(--dark-purpel-) ; */
     }
+    .letter-button:hover {
+     transform: var(--scale-);
+        box-shadow: 1px 1px 4px var(--dark-purpel-);
+    }
 
     .l_1,
     .l_2,
