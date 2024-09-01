@@ -228,10 +228,13 @@ ul {
         font-size: 30px;
         font-weight: bold;
         /* box-shadow: 2px 1px var(--dark-purpel-) ; */
+         cursor: pointer;
+        transition: 0.3s; 
     }
     .letter-button:hover {
      transform: var(--scale-);
         box-shadow: 1px 1px 4px var(--dark-purpel-);
+     
     }
 
     .l_1,
