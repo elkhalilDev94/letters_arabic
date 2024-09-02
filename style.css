@@ -521,6 +521,15 @@
 
     /*-----------------------*/
 
+     .tadrib1 {
+        .exmple {
+            .letter-button {
+             width: 80px;
+             height: 60px;
+             position: relative;
+             }
+          }
+    }
 
 }
 
