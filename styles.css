@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap');
+
+ :root {
+
+     --bg-color-: #fff0d1;
+     /* example: background-color: var(--bg-color-); */
+     --ghose-: #f8afc7;
+     --pink-: #f03271;
+     --lime-: #99eebf;
+     --red-: #d34a32;
+     /* example: color: var(--red-); */
+     --purpel-: #9967d3;
+     --yellow-: #feee62;
+     --blue-: #2cb6e4;
+     --green-: #0e7a2c;
+     --dark-purpel-: #170d41;
+     --box-radius-: 20px 0 20px 0;
+     /* example: border-radius: var(--box-radius-); */
+     --fit-radius-: 20px;
+     --full-radius-: 50%;
+     --letter-radius: 10px;
+     /* المرجو استخدامها في جميع الأزرار في خاصية hover */
+     --scale-: scale(1.2);
+     /* example: transform: var(--scale-); */
+ }
+
+
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     scroll-behavior: smooth;
+     /* font-family: "Rubik", sans-serif; */
+     font-family: "Noto Naskh Arabic", serif;
+     font-optical-sizing: auto;
+     font-weight: bold;
+ }
+
+
+ body {
+     width: 100%;
+     background-color: var(--bg-color-);
+     overflow-x: hidden;
+ }
+
+ .letters-section {
+     padding: 10px 45px;
+     width: 100%;
+     height: fit-content;
+     background-color: #fff4da;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin: 12px auto;
+ }
+
+
+ .letters-section .title {
+     background-color: var(--dark-purpel-);
+     display: inline-block;
+     height: 55px;
+     border-radius: var(--fit-radius-);
+     color: var(--yellow-);
+     align-content: center;
+     margin: 30px auto;
+     font-size: 14px;
+
+     h1,
+     h2 {
+         padding: 0px 25px;
+     }
+ }
+
+ .letters {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 5px;
+ }
+
+ hr {
+     width: 75%;
+     border: 1px solid var(--red-);
+ }
+
+ hr.first {
+     margin-top: 20px;
+ }
+
+ .guide {
+     display: flex;
+     justify-content: space-between;
+     width: 70%;
+     margin: 10px 0;
+ }
+
+ .colorGuide {
+     display: flex;
+     align-items: center;
+ }
+
+ .colorGuide span {
+     width: 20px;
+     height: 20px;
+     margin-left: 3px;
+ }
+
+ .colorGuide.yellow span {
+     background-color: var(--yellow-);
+ }
+
+ .colorGuide.blue span {
+     background-color: var(--blue-);
+ }
+
+ .colorGuide.yellowBlue span {
+     position: relative;
+ }
+
+ .colorGuide.yellowBlue span::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 1px;
+     width: 100%;
+     height: 50%;
+     background-color: var(--blue-);
+ }
+
+ .colorGuide.yellowBlue span::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 50%;
+     background-color: var(--yellow-);
+ }
+
+ .notes {
+     /* background-color: var(--bg-color-); */
+     padding: 10px;
+     /* border: 1px solid #5d657a; */
+     border-radius: 10px;
+     font-size: 25px;
+     width: 75%;
+     margin: 10px 0;
+     color: #0e2e2b;
+ }
+
+ ul {
+     list-style: none;
+ }
+
+ .notes ul li {
+     margin: 20px 0;
+ }
+
+ /*------------<h1>مجموعات الحروف بالكسر</h1>-----------------*/
+
+.groups {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+ .group {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+     margin-bottom: 25px;
+     height: 225px;
+     border-radius: 15px;
+     position: relative;
+     
+    .col {
+       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 140px;
+        margin-top: 15px;
+
+        .letter-button {
+            margin: 10px;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            background-color: var(--blue-);
+            border-radius: var(--box-radius-);
+        }
+
+
+        .letter-button.top {
+            background-color: yellow;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            margin-bottom: 5px;
+            border: 3px dotted green;
+            color: var(--red-);
+        }
+
+        .letter-button.bottom {
+            margin-top: 10px;
+            height: 90px;
+            width: 125px;
+        }
+   
+        .letter-button:hover {
+            transform: var(--scale-);
+            box-shadow: 1px 1px 4px var(--dark-purpel-);
+        }
+    }
+ }
+
+ .group::before {
+    content: '';
+    width: 175px;
+    height: 35px;
+    position: absolute;
+    background-color: rgb(245, 235, 235);
+    top: -20px;
+    text-align: center;
+    align-content: center;
+    border-radius: var(--fit-radius-);
+    border: 2px solid var(--green-);
+    font-size: 26px;
+    color: var(--red-);
+ }
+
+ .group.group._1::before {
+    content: 'المجموعة 1';
+ }
+ .group.group._2::before {
+    content: 'المجموعة 2';
+ }
+ .group.group._3::before {
+    content: 'المجموعة 3';
+ }
+ .group.group._4::before {
+    content: 'المجموعة 4';
+ }
+
+ .group._1,
+ .group._4 {
+     background-color: #0e7a2c;
+ }
+
+ .group._2{
+    background-color: var(--ghose-);
+ }
+
+ .group._3 {
+    background-color: #feee62;
+ }
+
+ .group._letters {
+     display: flex;
+ }
+
+ .group_title {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: var(--red-);
+     font-size: 28px;
+     font-weight: bold;
+ }
+
+
+ /*---------------- media query ----------------*/
+
+ @media (max-width: 950px) {
+    .groups {
+        display: grid;
+        grid-template-columns: 1fr;;
+    }
+ }
+
+ @media (max-width: 768px) {
+
+     .letters-section {
+         padding: 10px 30px;
+     }
+
+     .letters-section .title {
+         font-size: 12px;
+         padding: 0px;
+     }
+
+     .guide {
+         width: 90%;
+         font-size: 10px;
+     }
+
+     .colorGuide span {
+         width: 15px;
+         height: 15px;
+         margin-left: 3px;
+     }
+
+     hr {
+         width: 90%;
+         border: 1px solid var(--red-);
+     }
+
+     .notes {
+         padding: 8px;
+         font-size: 15px;
+         width: 90%;
+         margin: 10px 0;
+         color: #0e2e2b;
+     }
+
+  
+ 
+ }
+
+ @media (max-width: 640px) {
+     .letters-section {
+         padding: 10px;
+     }
+
+     .letters .letter-button:hover {
+         transform: var(--scale-);
+         box-shadow: 1px 1px 4px var(--dark-purpel-);
+     }
+
+     .letters-section .title {
+         font-size: 13px;
+         padding: 0px;
+     }
+
+     .letters {
+         grid-template-columns: repeat(3, 1fr);
+         gap: 3px;
+     }
+
+
+     .guide {
+         font-size: 8px;
+     }
+
+     .colorGuide span {
+         width: 10px;
+         height: 10px;
+         margin-left: 3px;
+     }
+
+     .notes {
+         padding: 8px;
+         font-size: 12px;
+         width: 90%;
+         margin: 10px 0;
+         color: #0e2e2b;
+     }
+
+     .line {
+         margin: 15px auto;
+     }
+
+     .group {
+         display: flex;
+     }
+
+         .title {
+             h1 {
+                 font-size: 17px;
+             }
+
+             h2 {
+                 font-size: 16px;
+             }  
+     }
+ }
+
+ @media (max-width: 460px) {
+
+         .title {
+
+             h1,
+             h2 {
+                 padding: 8px 15px;
+             }
+
+             h1 {
+                 font-size: 15px;
+             }
+
+             h2 {
+                 font-size: 15px;
+             }
+         }
+
+         .group {
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+         }
+ }
