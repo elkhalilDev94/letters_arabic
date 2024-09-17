@@ -1,383 +1,430 @@
- @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
- :root {
-
-     --bg-color-: #fff0d1;
-     /* example: background-color: var(--bg-color-); */
-     --ghose-: #f8afc7;
-     --pink-: #f03271;
-     --lime-: #99eebf;
-     --red-: #d34a32;
-     /* example: color: var(--red-); */
-     --purpel-: #9967d3;
-     --yellow-: #feee62;
-     --blue-: #2cb6e4;
-     --green-: #0e7a2c;
-     --dark-purpel-: #170d41;
-     --box-radius-: 20px 0 20px 0;
-     /* example: border-radius: var(--box-radius-); */
-     --fit-radius-: 20px;
-     --full-radius-: 50%;
-     --letter-radius: 10px;
-     /* المرجو استخدامها في جميع الأزرار في خاصية hover */
-     --scale-: scale(1.2);
-     /* example: transform: var(--scale-); */
- }
-
-
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     scroll-behavior: smooth;
-     font-family: "Rubik", sans-serif;
-     font-optical-sizing: auto;
- }
-
-
-
- body {
-     width: 100%;
-     background-color: var(--bg-color-);
-     overflow-x: hidden;
- }
-
- .letters-section {
-     padding: 10px 45px;
-     width: 100%;
-     height: fit-content;
-     background-color: #fff4da;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     margin: 12px auto;
- }
-
-
- .titles {
-     display: flex;
-
-     /* background-color: #0e7a2c; */
-     .title {
-         background-color: var(--red-) !important;
-     }
-
-     margin-bottom: 30px;
- }
-
- .letters-section .title {
-     background-color: var(--dark-purpel-);
-     display: inline-block;
-     height: 45px;
-     border-radius: var(--fit-radius-);
-     color: var(--yellow-);
-     align-content: center;
-     margin: 0px 8px;
-
-     h1,
-     h2 {
-         padding: 3px 25px;
-     }
- }
-
- .letters {
-     display: grid;
-     grid-template-columns: repeat(4, 1fr);
-     gap: 5px;
- }
-
- .letters .letter-button {
-     background-color: white;
-     width: 120px;
-     height: 120px;
-     padding: 10px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     font-size: 40px;
-     border-radius: var(--fit-radius-);
-     border: 2px solid var(--green-);
-     margin: 10px 40px;
-     cursor: pointer;
-     transition: 0.3s;
- }
-
- .letters .letter-button:hover {
-     transform: var(--scale-);
-     box-shadow: 1px 1px 5px black;
- }
-
- .letters .letter-button.lathawy {
-     background-color: var(--yellow-);
-     border: 2px solid orange;
- }
-
- .letters .letter-button.tafkhim {
-     background-color: var(--blue-);
- }
-
- .letters .letter-button.mix {
-     position: relative;
-     overflow: hidden;
- }
-
- .letters .letter-button.mix::before {
-     content: '';
-     width: 100%;
-     height: 50%;
-     position: absolute;
-     top: 0;
-     left: 0;
-     background-color: var(--yellow-);
-     z-index: -1;
- }
-
- .letters .letter-button.mix::after {
-     content: '';
-     width: 100%;
-     height: 50%;
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     background-color: var(--blue-);
-     z-index: -1;
- }
-
- .letters .letter-button.mix {
-     z-index: 1;
- }
-
- hr {
-     width: 75%;
-     border: 1px solid var(--red-);
- }
-
- hr.first {
-     margin-top: 20px;
- }
-
- .guide {
-     display: flex;
-     justify-content: space-between;
-     width: 70%;
-     margin: 10px 0;
- }
-
- .colorGuide {
-     display: flex;
-     align-items: center;
- }
-
- .colorGuide span {
-     width: 20px;
-     height: 20px;
-     margin-left: 3px;
- }
-
- .colorGuide.yellow span {
-     background-color: var(--yellow-);
- }
-
- .colorGuide.blue span {
-     background-color: var(--blue-);
- }
-
- .colorGuide.yellowBlue span {
-     position: relative;
- }
-
- .colorGuide.yellowBlue span::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 1px;
-     width: 100%;
-     height: 50%;
-     background-color: var(--blue-);
- }
-
- .colorGuide.yellowBlue span::after {
-     content: '';
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     height: 50%;
-     background-color: var(--yellow-);
- }
-
- .notes {
-     /* background-color: var(--bg-color-); */
-     padding: 10px;
-     /* border: 1px solid #5d657a; */
-     border-radius: 10px;
-     font-size: 25px;
-     width: 75%;
-     margin: 10px 0;
-     color: #0e2e2b;
- }
-
- ul {
-     list-style: none;
- }
-
- .notes ul li {
-     margin: 20px 0;
- }
-
-
-
-
- /*------------<h1>مجموعات الحروف بالكسر</h1>-----------------*/
-
-
- .group {
-     width: 100%;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-around;
-     align-items: center;
-
-     .word {
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-         align-items: center;
-     }
-
-     .letter-button {
-         margin: 15px;
-         font-size: 30px;
-         font-weight: bold;
-         cursor: pointer;
-         transition: 0.3s;
-
-         /* box-shadow: 2px 1px var(--dark-purpel-) ; */
-     }
-
-     .letter-button:hover {
-         transform: var(--scale-);
-         box-shadow: 1px 1px 4px var(--dark-purpel-);
-     }
-
-     .l_1,
-     .l_2,
-     .l_3,
-     .jomla {
-         /* border: 2px solid var(--dark-purpel-); */
-         box-shadow: 2px 1px var(--dark-purpel-);
-         outline: navy;
-     }
-
-     .l_1 {
-         background-color: var(--blue-);
-     }
-
-     .l_2 {
-         background-color: var(--ghose-);
-     }
-
-     .l_1,
-     .l_2 {
-         width: 80px;
-         height: 80px;
-         border-radius: var(--box-radius-);
-     }
-
-     .l_3 {
-         width: 160px;
-         height: 80px;
-         border-radius: var(--box-radius-);
-         background-color: var(--blue-);
-     }
-
-     .d {
-
-         background-color: var(--yellow-);
-         border-radius: 100%;
-         border: 2px dotted var(--green-);
-         height: 80px;
-         width: 80px;
-         position: relative;
-     }
-
-     .jomla {
-         width: 200px;
-         height: 80px;
-         border-radius: var(--box-radius-);
-         background-color: var(--blue-);
-     }
-
-  
-
-
-
-
-
-     .word:nth-child(odd) {
-         i {
-             color: var(--dark-purpel-);
-         }
-     }
-
-     .l4 {
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-         align-items: center;
-
-         .l_4 {
-             border: 2px dotted var(--red-);
-         }
-     }
-
-     i {
-         font-size: 40px;
-         color: var(--red-);
-         font-weight: bold;
-         margin-right: -25px;
-     }
- }
-
- .group.examples {
-     display: flex;
-     flex-direction: column;
- }
-
- .group._1,
- .group._2 {
-     display: flex;
-     justify-content: center;
-     /* background-color: #c3d332; */
-     padding: 20px;
- }
-
- .group._letters {
-     display: flex;
- }
-
- .group_title {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     color: var(--red-);
-     font-size: 28px;
-     font-weight: bold;
- }
-
- .group_title .square {
-     width: 40px;
-     height: 40px;
-     border: 2px solid var(--green-);
-     text-align: center;
-     margin-right: 5px;
-     position: relative;
-     align-items: center;
-     align-content: center;
- }
-
-
- /*
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&display=swap');
+
+:root {
+
+    --bg-color-: #fff0d1;
+    /* example: background-color: var(--bg-color-); */
+    --ghose-: #f8afc7;
+    --pink-: #f03271;
+    --lime-: #99eebf;
+    --red-: #d34a32;
+    /* example: color: var(--red-); */
+    --purpel-: #9967d3;
+    --yellow-: #feee62;
+    --blue-: #2cb6e4;
+    --green-: #0e7a2c;
+    --dark-purpel-: #170d41;
+    --box-radius-: 20px 0 20px 0;
+    /* example: border-radius: var(--box-radius-); */
+    --fit-radius-: 20px;
+    --full-radius-: 50%;
+    --letter-radius: 10px;
+    /* المرجو استخدامها في جميع الأزرار في خاصية hover */
+    --scale-: scale(1.2);
+    /* example: transform: var(--scale-); */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Rubik", sans-serif;
+    /* font-family: "Noto Naskh Arabic", serif; */
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+
+
+
+body {
+    width: 100%;
+    background-color: var(--bg-color-);
+    overflow-x: hidden;
+}
+
+.letters-section {
+    padding: 10px 45px;
+    width: 100%;
+    height: fit-content;
+    background-color: #fff4da;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px auto;
+}
+
+
+.titles {
+    display: flex;
+
+    /* background-color: #0e7a2c; */
+    .title {
+        background-color: var(--red-) !important;
+    }
+
+    margin-bottom: 30px;
+}
+
+.letters-section .title {
+    background-color: var(--dark-purpel-);
+    display: inline-block;
+    height: 45px;
+    border-radius: var(--fit-radius-);
+    color: var(--yellow-);
+    align-content: center;
+    margin: 0px 8px;
+
+    h1,
+    h2 {
+        padding: 3px 25px;
+    }
+}
+
+.letters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.letters .letter-button {
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    border-radius: var(--fit-radius-);
+    border: 2px solid var(--green-);
+    margin: 10px 40px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    span {
+        color: red;
+    }
+}
+
+.letters .letter-button:hover {
+    transform: var(--scale-);
+    box-shadow: 1px 1px 5px black;
+}
+
+.letters .letter-button.lathawy {
+    background-color: var(--yellow-);
+    border: 2px solid orange;
+}
+
+.letters .letter-button.tafkhim {
+    background-color: var(--blue-);
+}
+
+.letters .letter-button.mix {
+    position: relative;
+    overflow: hidden;
+}
+
+.letters .letter-button.mix::before {
+    content: '';
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--yellow-);
+    z-index: -1;
+}
+
+.letters .letter-button.mix::after {
+    content: '';
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--blue-);
+    z-index: -1;
+}
+
+.letters .letter-button.mix {
+    z-index: 1;
+}
+
+hr {
+    width: 75%;
+    border: 1px solid var(--red-);
+}
+
+hr.first {
+    margin-top: 20px;
+}
+
+.guide {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 10px 0;
+}
+
+.colorGuide {
+    display: flex;
+    align-items: center;
+}
+
+.colorGuide span {
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+}
+
+.colorGuide.yellow span {
+    background-color: var(--yellow-);
+}
+
+.colorGuide.blue span {
+    background-color: var(--blue-);
+}
+
+.colorGuide.yellowBlue span {
+    position: relative;
+}
+
+.colorGuide.yellowBlue span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 100%;
+    height: 50%;
+    background-color: var(--blue-);
+}
+
+.colorGuide.yellowBlue span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--yellow-);
+}
+
+.notes {
+    /* background-color: var(--bg-color-); */
+    padding: 10px;
+    /* border: 1px solid #5d657a; */
+    border-radius: 10px;
+    font-size: 25px;
+    width: 75%;
+    margin: 10px 0;
+    color: #0e2e2b;
+
+    h3 {
+        color: var(--red-);
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 20px;
+        color: black;
+        margin-right: 30px;
+    }
+
+    span {
+        color: var(--red-);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.notes ul li {
+    margin: 20px 0;
+}
+
+
+
+
+/*------------<h1>مجموعات الحروف بالكسر</h1>-----------------*/
+
+
+.group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .word {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .letter-button {
+        margin: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        /* box-shadow: 2px 1px var(--dark-purpel-) ; */
+    }
+
+    .letter-button:hover {
+        transform: var(--scale-);
+        box-shadow: 1px 1px 4px var(--dark-purpel-);
+    }
+
+    .l_1,
+    .l_2,
+    .l_3,
+    .l_4 {
+        position: relative;
+    }
+
+    .l_1::after,
+    .l_2::after,
+    .l_3::after,
+    .l_4::after {
+        content: '\21A2';
+        position: absolute;
+        left: -26px;
+        font-size: 32px !important;
+        font-weight: bold !important;
+        top: calc(50%-20px);
+        color: var(--red-);
+    }
+
+    .l_1::after,
+    .l_3::after {
+        color: var(--dark-purpel-);
+    }
+
+    .l_1,
+    .l_2,
+    .l_3,
+    .jomla {
+        /* border: 2px solid var(--dark-purpel-); */
+        box-shadow: 2px 1px var(--dark-purpel-);
+        outline: navy;
+    }
+
+    .l_1 {
+        background-color: var(--blue-);
+    }
+
+    .l_2 {
+        background-color: var(--ghose-);
+    }
+
+    .l_1,
+    .l_2 {
+        width: 80px;
+        height: 80px;
+        border-radius: var(--box-radius-);
+    }
+
+    .l_3 {
+        width: 160px;
+        height: 80px;
+        border-radius: var(--box-radius-);
+        background-color: var(--blue-);
+    }
+
+    .d {
+
+        background-color: var(--yellow-);
+        border-radius: 100%;
+        border: 2px dotted var(--green-);
+        height: 80px;
+        width: 80px;
+        position: relative;
+    }
+
+    .jomla {
+        width: 200px;
+        height: 80px;
+        border-radius: var(--box-radius-);
+        background-color: var(--blue-);
+    }
+
+
+
+
+
+
+
+    .word:nth-child(odd) {
+        i {
+            color: var(--dark-purpel-);
+        }
+    }
+
+    .l4 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .l_4 {
+            border: 2px dotted var(--red-);
+        }
+    }
+
+    i {
+        font-size: 40px;
+        color: var(--red-);
+        font-weight: bold;
+        margin-right: -25px;
+    }
+}
+
+.group.examples {
+    display: flex;
+    flex-direction: column;
+}
+
+.group._1,
+.group._2 {
+    display: flex;
+    justify-content: center;
+    /* background-color: #c3d332; */
+    padding: 20px;
+}
+
+.group._letters {
+    display: flex;
+}
+
+.group_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--red-);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.group_title .square {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--green-);
+    text-align: center;
+    margin-right: 5px;
+    position: relative;
+    align-items: center;
+    align-content: center;
+}
+
+
+/*
 .group_title  {
     border: 4px solid red;
     width: 9px;
@@ -402,368 +449,560 @@
 
 
 
- /*--------------- Styling Page 17 ------------------*/
+/*--------------- Styling Page 17 ------------------*/
+
+.letters.tadrib1 {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.row .exmple_ {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .letter-button {
+        width: 160px;
+        height: 80px;
+        position: relative;
+        padding-bottom: 27px;
+    }
 
 
-
- .letters .exmple_ {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-
-     .letter-button {
-         width: 120px;
-         height: 80px;
-         position: relative;
-     }
-
-     .letter-button.l1 {
-         background-color: var(--yellow-);
-     }
-
-     .letter-button.l2 {
-         background-color: var(--blue-);
-     }
-
-     .letter-button.l3 {
-         background-color: var(--green-);
-     }
-
-     .letter-button.l4 {
-         background-color: var(--red-);
-     }
-
-     .letter-button.l5 {
-         background-color: var(--yellow-);
-     }
-
-     .letter-button.l6 {
-         background-color: var(--blue-);
-     }
-
-     /* 
-   .letter-button::after {
+    .letter-button::after {
         position: absolute;
-        content: 'البقرة : 215';
-        font-size: 15px;
-        width: 85px;
+        content: '';
+        font-size: 13px;
+        width: 86px;
         height: 20px;
         background-color: var(--lime-);
         border-radius: 25px;
         bottom: -10px;
-        left: 18px;
+        left: calc(50% - 44px);
         border: 2px solid orange;
-    } 
- */
-     .src {
-         width: 70px;
-         height: 18px;
-         background-color: white;
-         border-radius: 25px;
-         border: 2px solid orange;
-         text-align: center;
-         align-items: center;
-         align-content: center;
-         margin-top: -17px;
-         font-size: 12px;
-         z-index: 2;
-         /* transform: var(--scale-); */
-     }
+        align-content: center;
+    }
 
- }
- 
- /* ------------   Page 18 --------------*/ 
+    .letter-button.l1._1:after {
+        content: 'التوبة : ٨١';
+    }
+
+    .letter-button.l1._2::after {
+        content: 'الأنفال : ٨';
+    }
+
+    .letter-button.l1._3::after {
+        content: 'هود : ٦٩';
+    }
+
+    .letter-button.l1._4::after {
+        content: 'الأنعام : ١٤';
+    }
+
+
+
+    .letter-button.l2._1:after {
+        content: 'التوبة : ٨١';
+    }
+
+    .letter-button.l2._2::after {
+        content: 'الأنفال : ٨';
+    }
+
+    .letter-button.l2._3::after {
+        content: 'هود : ٦٩';
+    }
+
+    .letter-button.l2._4::after {
+        content: 'الأنعام : ١٤';
+    }
+
+
+    .letter-button.l3._1:after {
+        content: 'التوبة : ٨١';
+    }
+
+    .letter-button.l3._2::after {
+        content: 'الأنفال : ٨';
+    }
+
+    .letter-button.l3._3::after {
+        content: 'هود : ٦٩';
+    }
+
+    .letter-button.l3._4::after {
+        content: 'الأنعام : ١٤';
+    }
+
+
+    .letter-button.l4._1:after {
+        content: 'التوبة : ٨١';
+    }
+
+    .letter-button.l4._2::after {
+        content: 'الأنفال : ٨';
+    }
+
+    .letter-button.l4._3::after {
+        content: 'هود : ٦٩';
+    }
+
+    .letter-button.l4._4::after {
+        content: 'الأنعام : ١٤';
+    }
+
+
+    .letter-button.l5._1:after {
+        content: 'التوبة : ٨١';
+    }
+
+    .letter-button.l5._2::after {
+        content: 'الأنفال : ٨';
+    }
+
+    .letter-button.l5._3::after {
+        content: 'هود : ٦٩';
+    }
+
+    .letter-button.l5._4::after {
+        content: 'الأنعام : ١٤';
+    }
+
+    .letter-button.l6._1:after {
+        content: 'التوبة : ٨١';
+    }
+
+    .letter-button.l6._2::after {
+        content: 'الأنفال : ٨';
+    }
+
+    .letter-button.l6._3::after {
+        content: 'هود : ٦٩';
+    }
+
+    .letter-button.l6._4::after {
+        content: 'الأنعام : ١٤';
+    }
+
+}
+
+
+
+/* ------------   Page 18 --------------*/
+
+.letter-button.l1,
+.letter-button.l5 {
+    background-color: var(--yellow-);
+}
+
+.letter-button.l2,
+.letter-button.l6 {
+    background-color: var(--blue-);
+}
+
+.letter-button.l3 {
+    background-color: var(--green-);
+}
+
+.letter-button.l4 {
+    background-color: var(--red-);
+}
 
 .letters.tadrib2 {
-    display: flex;
-    flex-direction: column;
-}
+    display: grid;
+    grid-template-columns: 1fr;
 
-.row {
-    display: flex;
-    justify-content: space-between;
-}
-
-.row._5, .row._6 {
-    .l5 {
-        width: 320px;;
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
+
+    .row._5 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .letter-button.l5 {
+        background-color: var(--yellow-);
+        width: 400px;
+    }
+
+    .letter-button.l6 {
+        background-color: var(--blue-);
+        width: 400px;
+    }
+
+
+    .letter-button.l5::after {
+       display: none;
+    }
+
+    .letter-button.l6::after {
+        display: none;
+    }
+
 }
 
- /*---------------- media query ----------------*/
 
 
- @media (max-width: 768px) {
+/*---------------- media query ----------------*/
 
-     .letters-section {
-         padding: 10px 30px;
-     }
 
-     .letters-section .title {
-         font-size: 15px;
-         padding: 5px;
-         margin: 3px 23px 20px 0;
-     }
+@media (max-width: 1440px) {
 
-     .letters .letter-button {
-         width: 90px;
-         height: 90px;
-         padding: 8px;
-         font-size: 30px;
-         margin: 8px 15px;
+}
 
-     }
+@media (max-width: 960px) {
 
-     .guide {
-         width: 90%;
-         font-size: 10px;
-     }
+    .letters.tadrib1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
 
-     .colorGuide span {
-         width: 15px;
-         height: 15px;
-         margin-left: 3px;
-     }
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 
-     hr {
-         width: 90%;
-         border: 1px solid var(--red-);
-     }
+    .letters.tadrib2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
 
-     .notes {
-         padding: 8px;
-         font-size: 15px;
-         width: 90%;
-         margin: 10px 0;
-         color: #0e2e2b;
-     }
+        .row._5{
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
 
-     .group {
-         .letter-button {
-             width: 80px;
-             height: 80px;
-             position: relative;
-         }
-/* 
-         .l_1::after,
-         .l_2::after,
-         .l_3::after,
-         .l_4::after {
-             content: '\2193'; 
-              Optional spacing 
-             content: url('down-arrows.png');
-            color: #000; /* Optional color 
-            bottom: -25px;
-            left: 30px;
-            position: absolute;
-            
-         } */
-     }
+    }
 
-     /*-----------------------*/
+}
 
-     .tadrib1 {
-         .exmple {
-             .letter-button {
-                 width: 80px;
-                 height: 60px;
-                 position: relative;
-             }
-         }
-     }
+@media (max-width: 768px) {
 
-     .group._1, .group._2 {
+    .letters-section {
+        padding: 10px 30px;
+    }
+
+    .letters-section .title {
+        font-size: 15px;
+        padding: 0px;
+        margin: 3px 23px 20px 0;
+    }
+
+    .letters .letter-button {
+        width: 90px;
+        height: 90px;
+        padding: 8px;
+        font-size: 30px;
+        margin: 8px 15px;
+
+    }
+
+    .guide {
+        width: 90%;
+        font-size: 10px;
+    }
+
+    .colorGuide span {
+        width: 15px;
+        height: 15px;
+        margin-left: 3px;
+    }
+
+    hr {
+        width: 90%;
+        border: 1px solid var(--red-);
+    }
+
+    .notes {
+        padding: 8px;
+        font-size: 15px;
+        width: 90%;
+        margin: 10px 0;
+        color: #0e2e2b;
+    }
+
+    .group {
+        .letter-button {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+    }
+
+    /*-----------------------*/
+
+    .tadrib1 {
+        .exmple {
+            .letter-button {
+                width: 80px;
+                height: 60px;
+                position: relative;
+            }
+        }
+    }
+
+    .group._1,
+    .group._2 {
         display: flex;
         justify-content: center;
         flex-direction: column;
-      }
+    }
 
 
-      .letters.tadrib2 {
+    .letters.tadrib2 {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    
+
     .row {
         display: flex;
         flex-direction: column;
     }
 
-    .row._5, .row._6 {
+    .row._5,
+    .row._6 {
         .l5 {
-            width: 120px;;
+            width: 120px;
         }
     }
-    
- }
 
- @media (max-width: 640px) {
-     .letters-section {
-         padding: 10px;
-     }
+}
 
-     .letters .letter-button:hover {
-         transform: var(--scale-);
-         box-shadow: 1px 1px 4px var(--dark-purpel-);
-     }
+@media (max-width: 640px) {
 
-     .letters-section .title {
-         font-size: 13px;
-         padding: 5px;
-         margin: 3px 23px 20px 0;
-     }
+    .letters-section {
+        padding: 10px;
+    }
 
-     .letters {
-         grid-template-columns: repeat(3, 1fr);
-         gap: 3px;
-     }
+    .letters .letter-button:hover {
+        transform: var(--scale-);
+        box-shadow: 1px 1px 4px var(--dark-purpel-);
+    }
 
-     .letters .letter-button {
-         width: 80px;
-         height: 80px;
-         padding: 8px;
-         font-size: 30px;
-         font-weight: bold;
-     }
+    .letters-section .title {
+        font-size: 13px;
+        padding: 5px;
+        margin: 3px 23px 20px 0;
+    }
 
-     .guide {
-         font-size: 8px;
-     }
+    .letters {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3px;
+    }
 
-     .colorGuide span {
-         width: 10px;
-         height: 10px;
-         margin-left: 3px;
-     }
+    .letters .letter-button {
+        width: 80px;
+        height: 80px;
+        padding: 8px;
+        font-size: 30px;
+        font-weight: bold;
+    }
 
-     .notes {
-         padding: 8px;
-         font-size: 12px;
-         width: 90%;
-         margin: 10px 0;
-         color: #0e2e2b;
-     }
+    .guide {
+        font-size: 8px;
+    }
 
-     .line {
-         margin: 15px auto;
-     }
+    .colorGuide span {
+        width: 10px;
+        height: 10px;
+        margin-left: 3px;
+    }
 
-     .group {
-         display: flex;
-         flex-direction: column;
-         justify-content: right;
+    .notes {
+        padding: 8px;
+        font-size: 12px;
+        width: 90%;
+        margin: 10px 0;
+        color: #0e2e2b;
+    }
 
-         .word i,
-         .l4 i {
+    .line {
+        margin: 15px auto;
+    }
 
-             font-size: 40px;
-             color: var(--red-);
-             font-weight: bold;
-             margin-bottom: -26px;
-             transform: rotate(-90deg);
-             /* bottom: 2px; */
-             top: 80px;
-             position: absolute;
-             left: 35px;
-             transition: transform 0.3s ease;
-             transform-origin: center;
-             /* transform-origin: 50% 50%; */
-         }
-     }
+    .group {
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
 
-     .word,
-     .l4 {
-         display: flex;
-         flex-direction: column;
-         position: relative
-     }
+        .word i,
+        .l4 i {
 
-     .word:hover .letter-button,
-     .word:hover i {
-         transform: scale(1.2);
-     }
+            font-size: 40px;
+            color: var(--red-);
+            font-weight: bold;
+            margin-bottom: -26px;
+            transform: rotate(-90deg);
+            /* bottom: 2px; */
+            top: 80px;
+            position: absolute;
+            left: 35px;
+            transition: transform 0.3s ease;
+            transform-origin: center;
+            /* transform-origin: 50% 50%; */
+        }
+    }
 
-     .group._1,
-     .group._2 {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
+    .word,
+    .l4 {
+        display: flex;
+        /* flex-direction: column; */
+        position: relative
+    }
 
+    .word:hover .letter-button,
+    .word:hover i {
+        transform: scale(1.2);
+    }
 
-     }
-
-     .group._letters {
-         display: grid;
-         width: 100%;
-         grid-template-columns: repeat(3, 1fr);
-         /* grid-template-rows: repeat(3, 100px);  */
-         grid-template-rows: 100px;
-         align-items: center;
-         justify-items: center;
-     }
-
-     .group.examples {
-         display: grid;
-         grid-template-columns: repeat(2, 1fr);
-     }
+    .group._1,
+    .group._2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
 
-     .titles {
-         .title {
-             h1 {
-                 font-size: 17px;
-             }
+    }
 
-             h2 {
-                 font-size: 16px;
-             }
-         }
+    .group._letters {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-rows: repeat(3, 100px);  */
+        grid-template-rows: 100px;
+        align-items: center;
+        justify-items: center;
+    }
 
-     }
+    .group.examples {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-    
- }
 
- @media (max-width: 460px) {
+    .titles {
+        .title {
+            h1 {
+                font-size: 17px;
+            }
 
-     .letters.tadrib1 {
-         display: grid;
-         grid-template-columns: repeat(2, 1fr);
-     }
+            h2 {
+                font-size: 16px;
+            }
+        }
 
-     .group._letters {
-         display: grid;
-         width: 100%;
-         grid-template-columns: repeat(2, 1fr);
-         /* grid-template-rows: repeat(3, 100px);  */
-         grid-template-rows: 100px;
-         align-items: center;
-         justify-items: center;
-     }
+    }
 
-     .titles {
-         .title {
+    .letters.tadrib1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
 
-             h1,
-             h2 {
-                 padding: 8px 15px;
-             }
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 
-             h1 {
-                 font-size: 16px;
-             }
+    .letters.tadrib2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
 
-             h2 {
-                 font-size: 15px;
-             }
-         }
-     }
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
 
-     .title.ghk {
-         h1 {
-             font-size: 16px;
-             padding: 2px 8px;
-         }
-     }
- }
+      
+    }
+}
+
+@media (max-width: 460px) {
+
+    .letters.tadrib1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .letters.tadrib2 {
+        .row._5 {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            .letter-button {
+                align-items: center;
+                width: 365px;
+            }
+        }
+    }
+
+    .group._letters {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-rows: repeat(3, 100px);  */
+        grid-template-rows: 100px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .titles {
+        .title {
+
+            h1,
+            h2 {
+                padding: 8px 15px;
+            }
+
+            h1 {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .title.ghk {
+        h1 {
+            font-size: 16px;
+            padding: 2px 8px;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .letters.tadrib2 {
+        display: flex;
+        flex-direction: column;
+
+        .row._5 {
+            .letter-button {
+                width: 250px;
+            }
+        }
+    }
+}
