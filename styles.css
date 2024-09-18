@@ -899,7 +899,8 @@ ul {
 
     .letters {
         .exmple_ {
-            display: grid;
+            display: flex;
+      flex-direction: column;
         }
         .exmple_.r-5,
         .exmple_.r-6,
@@ -909,4 +910,8 @@ ul {
             }
         }
     }  
+    .letters.tadrib1 {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
