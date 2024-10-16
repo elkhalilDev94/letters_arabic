@@ -516,6 +516,43 @@ hr.first {
             padding: 2px 13px;
         }
     }
+
+    .group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .letters.tadribat {
+        & .r-5 {
+          & .letters {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+
+          & .txt {
+
+            & .center {
+                display: flex;
+                flex-direction: column;
+            }
+          }
+        }
+      }
+
 }
 
 @media screen and (min-width:576px) and (max-width:768px) {
